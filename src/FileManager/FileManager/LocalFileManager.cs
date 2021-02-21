@@ -568,7 +568,7 @@ namespace FileManager
         public string GetTextSha512Hash(string value)
         {
             var bytes = Encoding.UTF8.GetBytes(value);
-            return GetSha512Hash(bytes);
+            return GetBytesSha512Hash(bytes);
         }
 
         public string GetFileSha512Hash(FileInfo fInfo)
@@ -579,10 +579,10 @@ namespace FileManager
         public string GetFileSha512Hash(string path)
         {
             var bytes = ReadBinaryFile(path);
-            return GetSha512Hash(bytes);
+            return GetBytesSha512Hash(bytes);
         }
 
-        private string GetSha512Hash(byte[] value)
+        public string GetBytesSha512Hash(byte[] value)
         {
             using (var hash512 = new SHA512Managed())
             {
@@ -594,7 +594,7 @@ namespace FileManager
         public string GetTextSha256Hash(string value)
         {
             var bytes = Encoding.UTF8.GetBytes(value);
-            return GetSha256Hash(bytes);
+            return GetBytesSha256Hash(bytes);
         }
 
         public string GetFileSha256Hash(FileInfo fInfo)
@@ -605,10 +605,10 @@ namespace FileManager
         public string GetFileSha256Hash(string path)
         {
             var bytes = ReadBinaryFile(path);
-            return GetSha256Hash(bytes);
+            return GetBytesSha256Hash(bytes);
         }
 
-        private string GetSha256Hash(byte[] value)
+        public string GetBytesSha256Hash(byte[] value)
         {
             using (var hash256 = new SHA256Managed())
             {
@@ -620,7 +620,7 @@ namespace FileManager
         public string GetTextMd5Hash(string value)
         {
             var bytes = Encoding.UTF8.GetBytes(value);
-            return GetMd5Hash(bytes);
+            return GetBytesMd5Hash(bytes);
         }
 
         public string GetFileMd5Hash(FileInfo fInfo)
@@ -631,10 +631,10 @@ namespace FileManager
         public string GetFileMd5Hash(string path)
         {
             var bytes = ReadBinaryFile(path);
-            return GetMd5Hash(bytes);
+            return GetBytesMd5Hash(bytes);
         }
 
-        private string GetMd5Hash(byte[] value)
+        public string GetBytesMd5Hash(byte[] value)
         {
             using (var hashmd5 = MD5.Create())
             {

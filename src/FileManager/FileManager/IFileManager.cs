@@ -196,12 +196,15 @@ namespace FileManager
         string GetTextSha256Hash(string value);
         string GetFileSha256Hash(string path);
         string GetFileSha256Hash(FileInfo fInfo);
+        string GetBytesSha256Hash(byte[] value);
         string GetTextSha512Hash(string value);
         string GetFileSha512Hash(string path);
         string GetFileSha512Hash(FileInfo fInfo);
+        string GetBytesSha512Hash(byte[] value);
         string GetTextMd5Hash(string value);
         string GetFileMd5Hash(string path);
         string GetFileMd5Hash(FileInfo fInfo);
+        string GetBytesMd5Hash(byte[] value);
         string EncodeTextBase64String(string value);
         string EncodeFileBase64String(string path);
         string EncodeFileBase64String(FileInfo fInfo);

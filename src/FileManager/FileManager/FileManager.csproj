@@ -7,7 +7,7 @@
     <Description>Wrapper for reading/writing, creating hashes, base64 encode/decode for text and binary files and working with directories. Create/extract zip compressed folders. See how to use here https://github.com/ravikhubchandani/file-manager/blob/master/src/FileManager/Test/Program.cs</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageId>LocalFileManager</PackageId>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
