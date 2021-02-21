@@ -59,12 +59,12 @@ namespace FileManager
         /// <summary>
         /// Returns True is the file specified exists
         /// </summary>
-        bool GetFileExists(string path);
+        bool GetFileExists(params string[] path);
 
         /// <summary>
         /// Get information of specified file. File name is included in the path
         /// </summary>
-        FileInfo GetFileInfo(string path);
+        FileInfo GetFileInfo(params string[] path);
 
         /// <summary>
         /// Returns the full path of the directory where the specified file is

@@ -195,14 +195,14 @@ namespace FileManager
             return GetFileInfo(path).Directory.FullName;
         }
 
-        public bool GetFileExists(string path)
+        public bool GetFileExists(params string[] path)
         {
             return GetFileInfo(path).Exists;
         }
 
-        public FileInfo GetFileInfo(string path)
+        public FileInfo GetFileInfo(params string[] path)
         {
-            return new FileInfo(path);
+            return new FileInfo(Path.Combine(path));
         }
 
         public string GetTemporaryFilePath()
