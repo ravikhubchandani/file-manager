@@ -8,22 +8,12 @@ namespace FileManager
         /// <summary>
         /// Get information of specified directory. Folder name is included in the path
         /// </summary>
-        DirectoryInfo GetDirectoryInfo(string path);
+        DirectoryInfo GetDirectoryInfo(params string[] path);
 
         /// <summary>
-        /// Get information of specified directory. Folder name is NOT included in the path
+        /// Create new directory in the specified path
         /// </summary>
-        DirectoryInfo GetDirectoryInfo(string path, string name);
-
-        /// <summary>
-        /// Create new directory in the specified path. Folder name is included in the path
-        /// </summary>
-        DirectoryInfo CreateDirectory(string path);
-
-        /// <summary>
-        /// Create new directory in the specified path. Folder name is NOT included in the path
-        /// </summary>
-        DirectoryInfo CreateDirectory(string path, string name);
+        DirectoryInfo CreateDirectory(params string[] path);
         
         /// <summary>
         /// Creates a temporary directory

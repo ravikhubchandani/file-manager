@@ -11,24 +11,18 @@ namespace FileManager
 {
     public sealed class LocalFileManager : IFileManager
     {
-        public DirectoryInfo GetDirectoryInfo(string path)
+        public DirectoryInfo GetDirectoryInfo(params string[] path)
         {
-            return new DirectoryInfo(path);
+            if (path == null || path.Length == 0)
+                throw new ArgumentException("No output path specified");
+            return new DirectoryInfo(Path.Combine(path));
         }
 
-        public DirectoryInfo GetDirectoryInfo(string path, string name)
+        public DirectoryInfo CreateDirectory(params string[] path)
         {
-            return GetDirectoryInfo(Path.Combine(path, name));
-        }
-
-        public DirectoryInfo CreateDirectory(string path)
-        {
-            return Directory.CreateDirectory(path);
-        }
-
-        public DirectoryInfo CreateDirectory(string path, string name)
-        {
-            return CreateDirectory(Path.Combine(path, name));
+            if (path == null || path.Length == 0)
+                throw new ArgumentException("No output path specified");
+            return Directory.CreateDirectory(Path.Combine(path));
         }
 
         public DirectoryInfo GetTemporaryDirectory()
@@ -202,6 +196,8 @@ namespace FileManager
 
         public FileInfo GetFileInfo(params string[] path)
         {
+            if (path == null || path.Length == 0)
+                throw new ArgumentException("No output path specified");
             return new FileInfo(Path.Combine(path));
         }
 
